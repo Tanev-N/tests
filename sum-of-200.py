@@ -1,4 +1,5 @@
-# Программа решает поставленную задану, но при этом все функции, константы и перечисления можно инкапсулировать в класс состояния, если его нужно будет встроить в часть какого-то большого кода.
+# Программа решает поставленную задану, но при этом все функции, константы и перечисления можно
+# инкапсулировать в класс состояния, если его нужно будет встроить в часть какого-то большого кода.
 
 from enum import Enum
 
@@ -14,8 +15,8 @@ ORDER = [Operation.NONE, Operation.PLUS, Operation.MINUS]
 SUM_FOR_TASK = 200
 ALL_DIGITS = [i for i in range(9,-1,-1)]
 
-ZERO_STATE = str(ORDER[0].value).join(map(str, ALL_DIGITS)) # строка 9_8_7_6_5_4_3_2_1_0 в нашем случае
-END_STATE = str(ORDER[-1].value).join(map(str, ALL_DIGITS)) # строка 9-8-7-6-5-4-3-2-1-0 в нашем случае
+ZERO_STATE = ORDER[0].value.join(map(str, ALL_DIGITS)) # строка 9_8_7_6_5_4_3_2_1_0 в нашем случае
+END_STATE = ORDER[-1].value.join(map(str, ALL_DIGITS)) # строка 9-8-7-6-5-4-3-2-1-0 в нашем случае
 
 def sumOfState(state): # Возращает сумму состояния
     totalSum = 0
